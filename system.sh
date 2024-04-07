@@ -239,4 +239,8 @@ close=['<Super>q']
 night-light-enabled='true'
 night-light-temperature='2159'
 
+[org/gnome/desktop/app-folders]
+folder-children=['']
 EOF
+
+dconf update

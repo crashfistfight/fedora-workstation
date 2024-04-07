@@ -39,7 +39,6 @@ removals=(
   'evince*'
   'loupe'
   'gnome-calculator'
-  'gnome-system-monitor'
   'baobab'
   'mediawriter'
   'firefox'
@@ -239,7 +238,6 @@ close=['<Super>q']
 [org/gnome/settings-deaemon/plugins/color]
 night-light-enabled='true'
 night-light-temperature='2159'
-
-[org/gnome/desktop/app-folders]
-folder-children=['']
 EOF
+
+dconf update

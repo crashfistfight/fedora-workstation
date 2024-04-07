@@ -39,7 +39,6 @@ removals=(
   'evince*'
   'loupe'
   'gnome-calculator'
-  'gnome-system-monitor'
   'baobab'
   'mediawriter'
   'firefox'

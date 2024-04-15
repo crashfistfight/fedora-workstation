@@ -155,7 +155,6 @@ ExecStart=/usr/bin/dbus-run-session /usr/bin/flatpak --system update -assumeyes 
 
 # repair
 ExecStart=/usr/bin/dbus-run-session /usr/bin/flatpak --system repair
-
 EOF
 
 tee /etc/systemd/system/flatpak-automatic.timer > /dev/null <<EOF

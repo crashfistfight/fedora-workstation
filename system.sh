@@ -62,9 +62,15 @@ flatpaks=(
 )
 
 
-### disclaimer ###
+### tests ###
 if [[ ! "$EUID" = "0" ]]; then
     echo "Please run as root, exiting..."
+    sleep 2
+    exit
+fi
+
+if ! mount | grep -oq '/home type btrfs'; then
+    echo "/home is not a btrfs subvolume, exiting..."
     sleep 2
     exit
 fi

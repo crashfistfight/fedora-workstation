@@ -43,12 +43,17 @@ After=network-online.target
 
 [Service]
 Type=oneshot
-# https://github.com/ublue-os/config/issues/168
-ExecStart=/usr/bin/dbus-run-session /usr/bin/flatpak --user uninstall --unused --assumeyes --noninteractive --delete-data
-ExecStart=/usr/bin/dbus-run-session /usr/bin/flatpak --user update --assumeyes --noninteractive
-ExecStart=/usr/bin/dbus-run-session /usr/bin/flatpak --user repair
 Restart=on-failure
 RestartSec=60s
+
+# uninstall unused flatpaks
+ExecStart=/usr/bin/dbus-run-session /usr/bin/flatpak --user uninstall --unused --assumeyes --noninteractive --delete-data
+
+# update
+ExecStart=/usr/bin/dbus-run-session /usr/bin/flatpak --user update --assumeyes --noninteractive
+
+# repair
+ExecStart=/usr/bin/dbus-run-session /usr/bin/flatpak --user repair
 EOF
 
 tee "$HOME"/.config/systemd/user/flatpak-automatic.timer > /dev/null <<EOF

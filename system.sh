@@ -9,7 +9,7 @@ packages=(
   'snapper'
   'vim'
   'syncthing'
-  'dnf-automatic'
+#  'dnf-automatic'
   'nautilus'
   'gnome-console'
   'virt-manager'
@@ -77,10 +77,55 @@ dnf update --assumeyes
 dnf install --assumeyes "${packages[@]}"
 
 # configure system updates
-sed --in-place "s@^apply_updates = .*@apply_updates = yes@" /etc/dnf/automatic.conf
+#sed --in-place "s@^apply_updates = .*@apply_updates = yes@" /etc/dnf/automatic.conf
+
+#systemctl daemon-reload
+#systemctl enable --now dnf-automatic.timer
+
+tee /etc/systemd/system/dnf-offline-automatic.service > /dev/null <<EOF
+[Unit]
+Description=Start automatic offline updates on reboot
+Wants=network-online.target
+After=network-online.target
+
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+Restart=on-failure
+RestartSec=60s
+
+# refresh repo
+ExecStartPre=/usr/bin/pkcon refresh force
+
+# download updates
+ExecStart=/usr/bin/pkcon update --only-download
+
+# prepare update
+ExecStart=/usr/bin/pkcon offline-get-prepared
+
+# set magiclink
+ExecStartPost=/usr/bin/pkcon offline-trigger
+EOF
+
+tee /etc/systemd/system/dnf-offline-automatic.timer > /dev/null <<EOF
+[Unit]
+Description=Timer for automatic offline updates on reboot
+Wants=network-online.target
+After=network-online.target
+
+[Timer]
+OnBootSec=1h
+OnUnitInactiveSec=1d
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+EOF
 
 systemctl daemon-reload
-systemctl enable --now dnf-automatic.timer
+systemctl enable dnf-offline-automatic.timer
 
 
 ### flatpaks ###

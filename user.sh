@@ -17,7 +17,7 @@ flatpaks=(
 )
 
 
-### disclaimer ###
+### tests ###
 if [[ "$EUID" = "0" ]]; then
     echo "Please run as user, exiting..."
     sleep 2

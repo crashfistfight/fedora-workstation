@@ -269,12 +269,6 @@ EOF
 
 
 ### gnome ###
-# hide htop
-mv /usr/share/applications/{htop.desktop,htop.desktop.hide}
-
-# hide start-syncthing
-mv /usr/share/applications/{syncthing-start.desktop,syncthing-start.desktop.hide}
-
 # global gsettings
 tee /etc/dconf/db/local.d/01-custom > /dev/null <<EOF
 [org/gnome/desktop/interface]

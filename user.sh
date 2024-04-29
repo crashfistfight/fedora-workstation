@@ -72,3 +72,17 @@ EOF
 
 systemctl --user daemon-reload
 systemctl --user enable --now flatpak-automatic.timer
+
+
+### gnome ###
+# hide htop.desktop
+tee "$HOME"/.local/share/applications/htop.desktop > /dev/null <<EOF
+NoDisplay=true
+EOF
+
+# hide syncthing-start.desktop
+tee "$HOME"/.local/share/applications/syncthing-start.desktop > /dev/null <<EOF
+NoDisplay=true
+EOF
+
+

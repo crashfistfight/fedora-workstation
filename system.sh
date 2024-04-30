@@ -93,7 +93,8 @@ tee /etc/systemd/system/dnf-offline-automatic.service > /dev/null <<EOF
 Description=Start automatic offline updates on reboot
 Wants=network-online.target
 After=network-online.target
-
+StartLimitIntervalSec=10m
+StartLimitBurst=5
 
 [Service]
 Type=oneshot
@@ -146,6 +147,8 @@ tee /etc/systemd/system/flatpak-automatic.service > /dev/null <<EOF
 Description=Service for flatpak-automatic
 Wants=network-online.target
 After=network-online.target
+StartLimitIntervalSec=10m
+StartLimitBurst=5
 
 [Service]
 Type=oneshot

@@ -97,7 +97,6 @@ After=network-online.target
 
 [Service]
 Type=oneshot
-RemainAfterExit=yes
 Restart=on-failure
 RestartSec=60s
 
@@ -105,13 +104,13 @@ RestartSec=60s
 ExecStartPre=/usr/bin/pkcon refresh force
 
 # download updates
-ExecStart=/usr/bin/pkcon update --only-download
+ExecStart=-/usr/bin/pkcon update --only-download
 
 # prepare update
-ExecStart=/usr/bin/pkcon offline-get-prepared
+ExecStart=-/usr/bin/pkcon offline-get-prepared
 
 # set magiclink
-ExecStartPost=/usr/bin/pkcon offline-trigger
+ExecStartPost=-/usr/bin/pkcon offline-trigger
 EOF
 
 tee /etc/systemd/system/dnf-offline-automatic.timer > /dev/null <<EOF

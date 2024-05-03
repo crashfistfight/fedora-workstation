@@ -31,7 +31,7 @@ fi
 echo "root:$root_password" | chpasswd
 
 # remove user from group
-#usermod -rG wheel "$user"
+usermod -rG wheel "$user"
 
 # add user to group
 usermod -aG systemd-journal,libvirt,plugdev "$user"

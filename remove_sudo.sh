@@ -45,4 +45,4 @@ dnf remove --assumeyes sudo
 
 ### self destroy ###
 # delete script
-rm -- "${BASH_SOURCE[0]}"
+#rm -- "${BASH_SOURCE[0]}"

@@ -34,7 +34,7 @@ echo "root:$root_password" | chpasswd
 usermod -rG wheel "$user"
 
 # add user to group
-usermod -aG systemd-journal,libvirt,plugdev "$user"
+usermod -aG systemd-journal,libvirt "$user"
 
 # unlock package
 mv /etc/dnf/protected.d/{sudo.conf,sudo.conf.unlock}

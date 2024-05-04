@@ -14,6 +14,7 @@ packages=(
   'gnome-console'
   'virt-manager'
   'borgmatic'
+  'android-tools'
   )
 
 removals=(

@@ -54,7 +54,7 @@ usermod -aG systemd-journal,libvirt,plugdev "$user"
 
 ### remove sudo ###
 # unlock package
-mv /etc/dnf/protected.d/{sudo.conf,sudo.conf.unlock}
+mv --update /etc/dnf/protected.d/{sudo.conf,sudo.conf.unlock}
 
 # remove package
 dnf remove --assumeyes sudo

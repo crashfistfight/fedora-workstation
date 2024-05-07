@@ -30,7 +30,7 @@ fi
 flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # install user flatpaks
-flatpak --user install flathub --assumeyes --noninteractive "${flatpaks[@]}"
+flatpak --user install flathub --assumeyes --noninteractive --or-update "${flatpaks[@]}"
 
 # enable user flatpak auto-updates
 mkdir --parents "$HOME"/.config/systemd/user

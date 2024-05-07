@@ -140,7 +140,7 @@ systemctl enable dnf-offline-automatic.timer
 flatpak --system remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # install system flatpaks
-flatpak --system install flathub --assumeyes --noninteractive "${flatpaks[@]}"
+flatpak --system install flathub --assumeyes --noninteractive --or-update "${flatpaks[@]}"
 
 # enable system flatpak auto-updates
 tee /etc/systemd/system/flatpak-automatic.service > /dev/null <<EOF

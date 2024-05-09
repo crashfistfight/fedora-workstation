@@ -5,7 +5,6 @@
 ### config options ###
 # vars
 flatpaks=(
-  'com.github.tchx84.Flatseal'
   'com.spotify.Client'
   'com.yubico.yubioath'
   'org.gimp.GIMP'
@@ -13,7 +12,6 @@ flatpaks=(
   'org.chromium.Chromium'
   'com.bitwarden.desktop'
   'com.visualstudio.code-oss'
-  'org.gnome.Geary'
 )
 
 

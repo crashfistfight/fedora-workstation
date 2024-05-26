@@ -274,26 +274,3 @@ set wrapscan
 EOF
 
 
-### gnome ###
-# global gsettings
-tee /etc/dconf/db/local.d/01-custom > /dev/null <<EOF
-[org/gnome/desktop/interface]
-show-battery-percentage='true'
-
-[org/gnome/desktop/peripherals/touchpad]
-tap-to-click='true'
-two-finger-scrolling-enabled='true'
-natural-scroll='true'
-
-[org/gnome/desktop/privacy]
-disable-microphone='true'
-
-[org/gnome/desktop/wm/keybindings]
-close=['<Super>q']
-
-[org/gnome/settings-deaemon/plugins/color]
-night-light-enabled='true'
-night-light-temperature='2159'
-EOF
-
-dconf update

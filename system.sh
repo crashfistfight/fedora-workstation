@@ -163,7 +163,7 @@ RestartSec=60s
 ExecStart=/usr/bin/dbus-run-session /usr/bin/flatpak --system uninstall --unused --assumeyes --noninteractive --delete-data
 
 # update
-ExecStart=/usr/bin/dbus-run-session /usr/bin/flatpak --system update -assumeyes --noninteractive
+ExecStart=/usr/bin/dbus-run-session /usr/bin/flatpak --system update --assumeyes --noninteractive
 
 # repair
 ExecStart=/usr/bin/dbus-run-session /usr/bin/flatpak --system repair

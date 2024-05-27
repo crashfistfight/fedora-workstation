@@ -15,6 +15,7 @@ packages=(
   'virt-manager'
   'borgmatic'
   'android-tools'
+  'kernel-tools'
   )
 
 removals=(

@@ -11,7 +11,7 @@ packages=(
   'syncthing'
 #  'dnf-automatic'
   'nautilus'
-  'gnome-console'
+#  'gnome-console'
   'virt-manager'
   'borgmatic'
   'android-tools'

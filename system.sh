@@ -45,7 +45,7 @@ removals=(
   'mediawriter'
   'firefox'
   'firefox-langpacks'
-  'gnome-terminal'
+#  'gnome-terminal'
 )
 
 flatpaks=(

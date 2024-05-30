@@ -5,7 +5,7 @@
 ### config options ###
 # vars
 flatpaks=(
-  'com.spotify.Client'
+#  'com.spotify.Client'
   'com.yubico.yubioath'
   'org.gimp.GIMP'
   'org.signal.Signal'

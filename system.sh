@@ -62,7 +62,7 @@ flatpaks=(
   'org.freedesktop.Platform.ffmpeg-full/x86_64/23.08'
   'org.gnome.Firmware'
   'com.github.tchx84.Flatseal'
-  'org.gnome.Geary'
+#  'org.gnome.Geary'
   'org.gnome.World.PikaBackup'
 )
 

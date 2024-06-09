@@ -72,7 +72,7 @@ source files/system/snapper
 sed --in-place "s@^SNAPPER_CONFIGS=.*@SNAPPER_CONFIGS=\"home\"@" /etc/sysconfig/snapper
 
 systemctl daemon-reload
-systemctl enable --now snapper-timeline.timer snapper-cleanup.service
+systemctl enable --now snapper-timeline.timer snapper-cleanup.timer
 
 
 ### vim ###

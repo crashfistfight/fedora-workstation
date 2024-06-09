@@ -61,7 +61,7 @@ source files/system/bash
 ### snapper ###
 # configure snapper
 if [ ! -d /home/.snapshots ]; then
-  btrfs subvolume create /home/.snapshots
+  btrfs subvolume create "$(lsblk --output MOUNTPOINTS | grep 'home$')"/.snapshots
 fi
 
 mkdir --parents /etc/systemd/system/snapper-{cleanup.timer.d,timeline.timer.d}

@@ -60,6 +60,10 @@ source files/system/bash
 
 ### snapper ###
 # configure snapper
+if [ ! -d /home/.snapshots ]; then
+  btrfs subvolume create /home/.snapshots
+fi
+
 mkdir --parents /etc/systemd/system/snapper-{cleanup.timer.d,timeline.timer.d}
 mkdir --parents /etc/snapper/configs
 

@@ -1,5 +1,7 @@
 #! /usr/bin/env bash
 
+# shellcheck disable=SC2154
+
 tee /etc/systemd/system/snapper-cleanup.timer.d/override.conf > /dev/null <<EOF
 [Timer]
 OnBootSec=
@@ -15,7 +17,7 @@ EOF
 
 tee /etc/snapper/configs/home > /dev/null <<EOF
 # subvolume to snapshot
-SUBVOLUME="$(lsblk --output MOUNTPOINTS | grep 'home$')"
+SUBVOLUME="$home_mnt"
 
 # filesystem type
 FSTYPE="btrfs"

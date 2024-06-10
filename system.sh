@@ -23,9 +23,15 @@ fi
 
 ### dnf ###
 # remove, update and install packages
+required_packages=(
+  'snapper'
+  'vim'
+  'nautilus'
+)
+
 dnf autoremove --assumeyes "${removals[@]}"
 dnf update --assumeyes
-dnf install --assumeyes "${packages[@]}"
+dnf install --assumeyes "${required_packages[@]}" "${packages[@]}"
 
 # configure system updates
 #sed --in-place "s@^apply_updates = .*@apply_updates = yes@" /etc/dnf/automatic.conf

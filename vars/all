@@ -4,11 +4,8 @@
 
 packages=(
   'htop'
-  'snapper'
-  'vim'
   'syncthing'
 #  'dnf-automatic'
-  'nautilus'
 #  'gnome-console'
   'virt-manager'
   'borgmatic'

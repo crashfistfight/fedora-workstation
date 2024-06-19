@@ -59,6 +59,7 @@ system_flatpaks=(
   'com.github.tchx84.Flatseal'
 #  'org.gnome.Geary'
   'org.gnome.World.PikaBackup'
+  'org.gnome.Totem'
 )
 
 user_flatpaks=(

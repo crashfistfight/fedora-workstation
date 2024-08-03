@@ -3,8 +3,7 @@
 # shellcheck disable=SC2154,SC1091
 
 ### config options ###
-# vars
-source vars/all
+source conf
 
 
 ### tests ###
@@ -26,7 +25,6 @@ fi
 required_packages=(
   'snapper'
   'vim'
-  'nautilus'
 )
 
 dnf autoremove --assumeyes "${removals[@]}"
@@ -43,20 +41,6 @@ source files/system/dnf
 
 systemctl daemon-reload
 systemctl enable --now dnf-offline-automatic.timer
-
-
-### flatpaks ###
-# install flathub repo
-flatpak --system remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-# install system flatpaks
-flatpak --system install flathub --assumeyes --noninteractive --or-update "${system_flatpaks[@]}"
-
-# enable system flatpak auto-updates
-source files/system/flatpak
-
-systemctl daemon-reload
-systemctl enable --now flatpak-automatic.timer
 
 
 ### bash ###

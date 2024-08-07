@@ -1,0 +1,10 @@
+#! /usr/bin/env bash
+
+user_flatpaks=(
+  'com.yubico.yubioath'
+  'org.gimp.GIMP'
+  'org.signal.Signal'
+  'org.chromium.Chromium'
+  'com.bitwarden.desktop'
+  'com.visualstudio.code-oss'
+)

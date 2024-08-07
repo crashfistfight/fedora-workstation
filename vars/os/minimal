@@ -7,5 +7,7 @@ packages=(
   'borgmatic'
   'syncthing'
   'kernel-tools'
+  'snapper'
+  'vim'
 )
 

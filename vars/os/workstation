@@ -3,14 +3,8 @@
 # shellcheck disable=SC2034
 
 packages=(
-  'htop'
-  'syncthing'
-#  'dnf-automatic'
-#  'gnome-console'
   'virt-manager'
-  'borgmatic'
   'android-tools'
-  'kernel-tools'
   )
 
 removals=(
@@ -40,7 +34,6 @@ removals=(
   'mediawriter'
   'firefox'
   'firefox-langpacks'
-#  'gnome-terminal'
 )
 
 system_flatpaks=(
@@ -57,17 +50,11 @@ system_flatpaks=(
   'org.freedesktop.Platform.ffmpeg-full/x86_64/23.08'
   'org.gnome.Firmware'
   'com.github.tchx84.Flatseal'
-#  'org.gnome.Geary'
   'org.gnome.World.PikaBackup'
   'org.gnome.Totem'
 )
 
-user_flatpaks=(
-#  'com.spotify.Client'
-  'com.yubico.yubioath'
-  'org.gimp.GIMP'
-  'org.signal.Signal'
-  'org.chromium.Chromium'
-  'com.bitwarden.desktop'
-  'com.visualstudio.code-oss'
+source_scripts=(
+  bash
+  dnf
 )

@@ -3,8 +3,16 @@
 # shellcheck disable=SC2034
 
 packages=(
-  'virt-manager'
+  'cockpit'
+  'cockpit-machines'
+  'cockpit-podman'
   'android-tools'
+  'htop'
+  'borgmatic'
+  'syncthing'
+  'kernel-tools'
+  'snapper'
+  'vim'
   )
 
 removals=(
@@ -54,7 +62,3 @@ system_flatpaks=(
   'org.gnome.Totem'
 )
 
-source_scripts=(
-  bash
-  dnf
-)

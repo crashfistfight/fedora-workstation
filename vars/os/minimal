@@ -3,11 +3,6 @@
 # shellcheck disable=SC2034
 
 packages=(
-  'htop'
-  'borgmatic'
-  'syncthing'
-  'kernel-tools'
-  'snapper'
-  'vim'
+
 )
 
